@@ -9,7 +9,6 @@
       href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap"
       rel="stylesheet"
     />
-    <script src="popup.js"></script>
     <link rel="stylesheet" href="./index.css" />
     <title>Image Resize</title>
   </head>
@@ -17,7 +16,7 @@
     <header>
       <div class="left-sec"><h1>IMAGE RESIZE APP</h1></div>
       <div class="right-sec">
-        <button onclick="openPopup()"><p>Resize Now</p></button>
+        <button><p>Resize Now</p></button>
         <p class="text">or <a href="#">get your resized image</a></p>
       </div>
     </header>
@@ -29,24 +28,42 @@
           <p class="desc">
             Resize images to fit your desired dimensions with my project app.
           </p>
-          <button onclick="openPopup()"><p>RESIZE YOUR IMAGE NOW</p></button>
+          <button><p>RESIZE YOUR IMAGE NOW</p></button>
           <p class="text">or <a href="#">Get Your Resized Image</a></p>
         </div>
         <div class="right">
-          <img src="./images/Designer.jpeg" alt="" />
+          <img src="../../uploads/Designer.jpg" alt="" />
         </div>
       </div>
     </div>
 
-    <div class="pop-up" id="pop-up">
-      <button id="pick-file">Choose An Image</button>
+    <div>
+      <div class="images-container" id="image"></div>
+
+      <div id="urlForResizedImage"></div>
+    </div>
+
+    <div class="pop-up">
+      <div class="choose-btn" id="choose-btn">
+        <input
+          type="file"
+          id="uploadImage"
+          accept="image/jpeg"
+          class="inputFile"
+        />
+        <button onclick=" uploadImage() ">Choose This Image</button>
+      </div>
       <div class="selectps">
-        <p>Select Height</p>  <p>Select Width</p>
+        <p>Select Height</p>
+        <p>Select Width</p>
       </div>
       <div class="input-dims">
-        <input type="number" id="height-input" /> <input type="number" id="height-input" />
+        <input type="number" id="heightInput" placeholder="Height" />
+        <input type="number" id="widthInput" placeholder="Width" />
       </div>
-      <button onclick="closePopup()">Submit</button>
+      <button class="submit-btn" id="submit" onclick="resizeImage()">
+        Submit
+      </button>
     </div>
 
     <footer>
@@ -56,15 +73,22 @@
         <a href="">Hire Me</a>
       </div>
       <div class="right">
-        <a href="https://www.facebook.com/profile.php?id=100081109613035"><i class="fa-brands fa-facebook"></i></a>
-        <a href="https://www.instagram.com/pierre_102010/"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.facebook.com/profile.php?id=100081109613035"
+          ><i class="fa-brands fa-facebook"></i
+        ></a>
+        <a href="https://www.instagram.com/pierre_102010/"
+          ><i class="fa-brands fa-instagram"></i
+        ></a>
         <a href="tel:+201004555993"><i class="fa-brands fa-whatsapp"></i></a>
-        <a href="pirohero11@gmail.com"><i class="fa-regular fa-envelope"></i></a>
+        <a href="pirohero11@gmail.com"
+          ><i class="fa-regular fa-envelope"></i
+        ></a>
       </div>
     </footer>
     <script
       src="https://kit.fontawesome.com/783309c4a8.js"
       crossorigin="anonymous"
     ></script>
+    <script src="script.js"></script>
   </body>
 </html>
