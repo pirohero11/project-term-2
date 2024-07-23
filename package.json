@@ -6,7 +6,7 @@
     "test": "test"
   },
   "scripts": {
-    "test": "jasmine-ts --config=jasmine.json",
+    "test": "npm run build && npm run jasmine",
     "start": "npx nodemon ./build/server.js",
     "build": "npx tsc",
     "jasmine": "jasmine",
