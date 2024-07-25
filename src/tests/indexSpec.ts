@@ -1,7 +1,8 @@
 import supertest from 'supertest';
 import app from '../backend/server';
 import { resizeImage } from '../backend/utils/imageProcessor';
-// import { uploadImage, addImageToContainer, selectImage, resizeImage2 } from '../../src/frontend/script.js';
+import path from 'path';
+import { File } from 'buffer';
 
 const request = supertest(app);
 
@@ -14,17 +15,9 @@ describe('Test endpoint response', () => {
 
 describe('imageProcessor function', () => {
   it('Runs as expected', async () => {
-    expect(resizeImage).toBeTruthy();
+    const image: { src: string } = { src: '' };
+    image.src = '../../src/frontend/images/icelandwaterfall.jpg'
+    expect(resizeImage(image.src.slice(26, 46), 200, 200)).toBeTruthy();
   });
 });
 
-// describe('frontend javascript', () => {
-//   it('Tests uploadImage function', async () => {
-//     const response = await request.get('http://localhost:3000/api/images/upload');
-//     expect(response.status).toBe(200);
-//   });
-//   // it('adds the Images to their container', async () => {
-//   //   const response = await addImageToContainer(__filename);
-//   //   expect(response.status).toEqual(__filename);
-//   // })
-// });
