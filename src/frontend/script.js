@@ -50,7 +50,7 @@ function selectImage(filename) {
   selectedImg?.classList.add('selected');
 }
 
-async function resizeImage() {
+async function resizeImage2() {
   if (!selectedImage) {
     alert('Please select an image from the gallery');
     return;

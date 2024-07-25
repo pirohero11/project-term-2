@@ -12,7 +12,7 @@ app.use(express.static(path.join(__dirname, '../src/frontend')));
 app.use('/uploads', express.static(path.join(__dirname, '../uploads')));
 
 app.get('/', (req: any, res: any) => {
-  res.sendFile(path.join(__dirname, '../src/frontend/index.html'));
+  res.sendFile(path.join(__dirname, '../../src/frontend/index.html'));
 });
 
 app.use('/api/images', router);
