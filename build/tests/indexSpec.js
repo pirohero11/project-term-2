@@ -21,11 +21,17 @@ describe('Test endpoint response', () => {
         const response = yield request.get('/');
         expect(response.status).toBe(200);
     }));
+    it('Gets the /resize endpoint', () => __awaiter(void 0, void 0, void 0, function* () {
+        const filepath = '../../uploads/icelandwaterfall.jpg';
+        expect(() => __awaiter(void 0, void 0, void 0, function* () {
+            yield (0, imageProcessor_1.resizeImage)(filepath, 200, 200);
+        })).not.toThrow();
+    }));
 });
 describe('imageProcessor function', () => {
     it('Runs as expected', () => __awaiter(void 0, void 0, void 0, function* () {
         const image = { src: '' };
-        image.src = '../../src/frontend/images/icelandwaterfall.jpg';
+        image.src = '../../uploads/icelandwaterfall.jpg';
         expect((0, imageProcessor_1.resizeImage)(image.src.slice(26, 46), 200, 200)).toBeTruthy();
     }));
 });
